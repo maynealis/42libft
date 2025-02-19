@@ -6,6 +6,8 @@ Libft is a project focused on creating a personal C library, reimplementing stan
 
 ### Part 1 - Libc Functions
 Functions from `<ctype.h>`:
+- [`ft_islower`](ft_islower.c) - checks for an alphabetic lowercase character
+- `ft_isupper` - checks for un alphabetic uppercase character
 - `ft_isalpha` - checks for an alphabetic character
 - `ft_isdigit` - checks for a digit (0 through 9)
 - `ft_isalnum` - checks for an alphanumeric character
@@ -40,6 +42,8 @@ Functions from `<stdlib.h>`:
 - `ft_strtrim` - trim beginning and end of string
 - `ft_split` - split string into array of strings
 - `ft_itoa` - convert integer to string
+- `ft_uitoa_base` - convert unsigned int to string on a certain base
+- `ft_ultoa_base` - convert unsigned lng to string on a certain base
 - `ft_strmapi` - create new string from modifying string with function
 - `ft_striteri` - modify string with function
 - `ft_putchar_fd` - output a char to a file descriptor
@@ -58,6 +62,14 @@ Linked List Functions:
 - `ft_lstclear` - delete sequence of elements of list
 - `ft_lstiter` - apply function to content of all list's elements
 - `ft_lstmap` - apply function to content of all list's elements into new list
+
+### Ft_printf
+This function is done in another project and included in my custom c library.
+- `ft_printf` - 
+
+### Get_next_line
+This function is done in another project and included in my custom c library.
+- `get_next_line` - 
 
 ## 🛠️ Usage
 
@@ -118,11 +130,6 @@ gcc your_file.c -L. -lft
    - Library creation
    - Dependency management
 
-## 📋 Testing
-
-[!NOTE]
-In progress
-
 
 ## 📈 Project Status
 
@@ -139,6 +146,6 @@ Project done as part of the 42 cursus.
 
 ## References
 
-* [memmove](https://marmota.medium.com/c-language-making-memmove-def8792bb8d5)
-* [static library](https://makori-mildred.medium.com/how-to-create-static-library-in-c-and-how-to-use-it-b8b3e1fde999)
-* [[static library videos](https://www.youtube.com/watch?v=MMecMkU-B94)]
+* [Memmove](https://marmota.medium.com/c-language-making-memmove-def8792bb8d5)
+* [Static library](https://makori-mildred.medium.com/how-to-create-static-library-in-c-and-how-to-use-it-b8b3e1fde999)
+* [Static library videos](https://www.youtube.com/watch?v=MMecMkU-B94)
