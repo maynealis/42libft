@@ -6,87 +6,142 @@
 #    By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 16:18:25 by cmayne-p          #+#    #+#              #
-#    Updated: 2025/02/16 18:23:11 by cmayne-p         ###   ########.fr        #
+#    Updated: 2025/02/20 09:54:13 by cmayne-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+# Library
+NAME	=	libft.a
 
-CC = cc
-CFLAGS = -Wall -Werror -Wextra
+# Compiler and flags
+CC		=	cc
+CFLAGS	=	-Wall -Werror -Wextra -MMD -MP -I$(INC_DIR)
+DEBUG	=	-g -fsanitize=address
 
-INCLUDES = libft.h
-SRCS = ft_isspace.c \
-	ft_isupper.c \
-	ft_islower.c \
-	ft_isalpha.c \
-	ft_isdigit.c \
-	ft_isalnum.c \
-	ft_isascii.c \
-	ft_isprint.c \
-	ft_strlen.c \
-	ft_memset.c \
-	ft_bzero.c \
-	ft_memcpy.c \
-	ft_memmove.c \
-	ft_strlcpy.c \
-	ft_strlcat.c \
-	ft_toupper.c \
-	ft_tolower.c \
-	ft_strchr.c \
-	ft_strrchr.c \
-	ft_strncmp.c \
-	ft_memchr.c \
-	ft_memcmp.c \
-	ft_strnstr.c \
-	ft_atoi.c \
-	ft_calloc.c \
-	ft_strdup.c \
-	ft_substr.c \
-	ft_strjoin.c \
-	ft_strtrim.c \
-	ft_split.c \
-	ft_itoa.c \
-	ft_strmapi.c \
-	ft_striteri.c \
-	ft_putchar_fd.c \
-	ft_putstr_fd.c \
-	ft_putendl_fd.c \
-	ft_putnbr_fd.c
-OBJS = $(SRCS:.c=.o)
+# Directories
+OBJ_DIR	=	obj
+SRC_DIR	=	src
+INC_DIR	=	inc
 
-SRCS_BONUS = ft_lstnew_bonus.c \
-			ft_lstadd_front_bonus.c \
-			ft_lstsize_bonus.c \
-			ft_lstlast_bonus.c \
-			ft_lstadd_back_bonus.c \
-			ft_lstdelone_bonus.c \
-			ft_lstclear_bonus.c \
-			ft_lstiter_bonus.c \
-			ft_lstmap_bonus.c
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+# Headers
+INCLUDES = $(INC_DIR)/libft.h
 
+# Source files
+LIBFT_SRCS	=	ft_isspace.c \
+				ft_isupper.c \
+				ft_islower.c \
+				ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c \
+				ft_strlen.c \
+				ft_memset.c \
+				ft_bzero.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_strchr.c \
+				ft_strrchr.c \
+				ft_strncmp.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_strnstr.c \
+				ft_atoi.c \
+				ft_calloc.c \
+				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c \
+				ft_strmapi.c \
+				ft_striteri.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_numlen.c \
+				ft_uitoa_base.c \
+				ft_ultoa_base.c
+
+LIST_SRCS	=	ft_lstnew_bonus.c \
+				ft_lstadd_front_bonus.c \
+				ft_lstsize_bonus.c \
+				ft_lstlast_bonus.c \
+				ft_lstadd_back_bonus.c \
+				ft_lstdelone_bonus.c \
+				ft_lstclear_bonus.c \
+				ft_lstiter_bonus.c \
+				ft_lstmap_bonus.c
+
+# Objects
+LIBFT_OBJS	=	$(addprefix $(OBJ_DIR)/, $(LIBFT_SRCS:.c=.o))
+LIST_OBJS	=	$(addprefix $(OBJ_DIR)/, $(LIST_SRCS:.c=.o))
+ALL_OBJS	=	$(LIBFT_OBJS) $(LIST_OBJS)
+
+# Colors
+GREEN		=	\033[0;32m
+GREEN_BOLD	=	\033[1;32m
+RED			=	\033[0;31m
+YELLOW		=	\033[0;33m
+BLUE		=	\033[0;34m
+CYAN		=	\033[0;36m
+PURPLE		=	\033[0;35m
+RESET		=	\033[0m
+
+ifneq ($(filter debug debug_bonus, $(MAKECMDGOALS)),)
+	COLOR	=	$(YELLOW)
+else
+	COLOR	=	$(GREEN)
+endif
+
+# Targets
 all: $(NAME)
 
-%.o: %.c $(INCLUDES) Makefile
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+	@echo "$(GREEN)📂 Created directory: $(OBJ_DIR) $(RESET)"
 
-$(NAME): $(OBJS) $(INCLUDES) Makefile
-	ar rcs $(NAME) $(OBJS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(COLOR)Compiled: $< $(RESET)"
 
-clean: bonus_clean
-	rm -rf $(OBJS)
-	rm -rf $(OBJS_BONUS)
+$(NAME): $(LIBFT_OBJS)
+	@ar rcs $(NAME) $(LIBFT_OBJS)
+	@echo "$(GREEN_BOLD)Library built: $(NAME) $(RESET)"
+
+clean:
+	@rm -rf $(OBJ_DIR)
+	@rm -f .bonus
+	@echo "$(CYAN)🧹 Cleaned object files 🧹 $(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(CYAN)🧹 Cleaned library 🧹 $(RESET)"
 
 re: fclean all
 
-bonus: $(OBJS_BONUS) $(INCLUDES) Makefile
-	ar rcs $(NAME) $(OBJS_BONUS)
+bonus: .bonus
+
+.bonus: $(LIST_OBJS)
+	@ar rcs $(NAME) $(LIST_OBJS)
+	@touch $@
+	@echo "$(GREEN_BOLD)Library built: $(NAME) $(RESET)"
+
+debug: CFLAGS += $(DEBUG)
+debug: re
+
+debug_bonus: CFLAGS += $(DEBUG)
+debug_bonus: fclean bonus
 
 norm:
-	norminette $(SRCS) $(SRCS_BONUS) $(INCLUDES)
+	norminette $(LIBFT_SRCS) $(LIST_SRCS) $(INCLUDES)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus debug debug_bonus norm
+
+# Include generated dependency files
+-include $(ALL_OBJS:.o=.d)

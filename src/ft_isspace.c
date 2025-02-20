@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+*	@brief Checks if a character is a whitespace character.
+*	
+*	@param c The character to check. Must have the value of an unsigned char 
+*			 or EOF.
+*	@return 1 if the character is a whitespace character; 0 otherwise.
+*/
 int	ft_isspace(int c)
 {
 	return (c == ' ' || c == '\f' || c == '\n' || c == '\r'

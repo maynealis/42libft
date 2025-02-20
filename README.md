@@ -7,12 +7,13 @@ Libft is a project focused on creating a personal C library, reimplementing stan
 ### Part 1 - Libc Functions
 Functions from `<ctype.h>`:
 - [`ft_islower`](ft_islower.c) - checks for an alphabetic lowercase character
-- `ft_isupper` - checks for un alphabetic uppercase character
+- `ft_isupper` - checks for an alphabetic uppercase character
 - `ft_isalpha` - checks for an alphabetic character
 - `ft_isdigit` - checks for a digit (0 through 9)
 - `ft_isalnum` - checks for an alphanumeric character
 - `ft_isascii` - checks whether c fits into the ASCII character set
 - `ft_isprint` - checks for any printable character
+- [`ft_isspace`](ft_isspace.c) - checks for a whitespace character
 - `ft_toupper` - convert char to uppercase
 - `ft_tolower` - convert char to lowercase
 
@@ -50,6 +51,7 @@ Functions from `<stdlib.h>`:
 - `ft_putstr_fd` - output a string to a file descriptor
 - `ft_putendl_fd` - output a string to a file descriptor, with newline
 - `ft_putnbr_fd` - output a number to a file descriptor
+- [`ft_numlen`](ft_numlen.c) - calculate the number of digits of an unsigned long on a certain base
 
 ### Bonus Part
 Linked List Functions:
@@ -62,6 +64,7 @@ Linked List Functions:
 - `ft_lstclear` - delete sequence of elements of list
 - `ft_lstiter` - apply function to content of all list's elements
 - `ft_lstmap` - apply function to content of all list's elements into new list
+
 
 ### Ft_printf
 This function is done in another project and included in my custom c library.

@@ -6,7 +6,7 @@
 /*   By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 16:36:55 by cmayne-p          #+#    #+#             */
-/*   Updated: 2025/01/05 16:20:45 by cmayne-p         ###   ########.fr       */
+/*   Updated: 2025/02/20 08:40:22 by cmayne-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+int		ft_numlen(unsigned long n, char *base);
+char	*ft_uitoa_base(unsigned int n, char *base);
+char	*ft_ultoa_base(unsigned long n, char *base);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
