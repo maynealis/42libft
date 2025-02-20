@@ -6,7 +6,7 @@
 #    By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 16:18:25 by cmayne-p          #+#    #+#              #
-#    Updated: 2025/02/20 09:54:13 by cmayne-p         ###   ########.fr        #
+#    Updated: 2025/02/20 10:12:35 by cmayne-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,18 @@ NAME	=	libft.a
 
 # Compiler and flags
 CC		=	cc
-CFLAGS	=	-Wall -Werror -Wextra -MMD -MP -I$(INC_DIR)
+CFLAGS	=	-Wall -Werror -Wextra -MMD -MP -I$(INC_DIR) -I$(GNL_DIR)
 DEBUG	=	-g -fsanitize=address
 
 # Directories
-OBJ_DIR	=	obj
-SRC_DIR	=	src
-INC_DIR	=	inc
+OBJ_DIR		=	obj
+SRC_DIR		=	src
+INC_DIR		=	inc
+GNL_DIR		=	gnl
+PRINTF_DIR	=	printf
 
 # Headers
-INCLUDES = $(INC_DIR)/libft.h
+INCLUDES	=	$(INC_DIR)/libft.h
 
 # Source files
 LIBFT_SRCS	=	ft_isspace.c \
@@ -78,10 +80,18 @@ LIST_SRCS	=	ft_lstnew_bonus.c \
 				ft_lstiter_bonus.c \
 				ft_lstmap_bonus.c
 
+GNL_SRCS	=	get_next_line.c \
+				get_next_line_utils.c
+
+GNL_MULT_FILES_SRCS	=	get_next_line_bonus.c \
+						get_next_line_bonus.c
+
 # Objects
 LIBFT_OBJS	=	$(addprefix $(OBJ_DIR)/, $(LIBFT_SRCS:.c=.o))
 LIST_OBJS	=	$(addprefix $(OBJ_DIR)/, $(LIST_SRCS:.c=.o))
-ALL_OBJS	=	$(LIBFT_OBJS) $(LIST_OBJS)
+GNL_OBJS	=	$(addprefix $(OBJ_DIR)/, $(GNL_SRCS:.c=.o))
+GNL_MULT_FILES_OBJS	=	$(addprefix $(OBJ_DIR)/, $(GNL_MULT_FILES_SRCS:.c=.o))
+ALL_OBJS	=	$(LIBFT_OBJS) $(LIST_OBJS) $(GNL_OBJS) $(GNL_MULT_FILES_OBJS)
 
 # Colors
 GREEN		=	\033[0;32m
@@ -110,8 +120,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(COLOR)Compiled: $< $(RESET)"
 
-$(NAME): $(LIBFT_OBJS)
-	@ar rcs $(NAME) $(LIBFT_OBJS)
+$(OBJ_DIR)/%.o: $(GNL_DIR)/%.c Makefile | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(COLOR)Compiled: $< $(RESET)"
+
+$(NAME): $(LIBFT_OBJS) $(GNL_OBJS)
+	@ar rcs $(NAME) $(LIBFT_OBJS) $(GNL_OBJS)
 	@echo "$(GREEN_BOLD)Library built: $(NAME) $(RESET)"
 
 clean:
