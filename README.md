@@ -6,64 +6,64 @@ Libft is a project focused on creating a personal C library, reimplementing stan
 
 ### Part 1 - Libc Functions
 Functions from `<ctype.h>`:
-- [`ft_islower`](ft_islower.c) - checks for an alphabetic lowercase character
-- `ft_isupper` - checks for an alphabetic uppercase character
-- `ft_isalpha` - checks for an alphabetic character
-- `ft_isdigit` - checks for a digit (0 through 9)
-- `ft_isalnum` - checks for an alphanumeric character
-- `ft_isascii` - checks whether c fits into the ASCII character set
-- `ft_isprint` - checks for any printable character
-- [`ft_isspace`](ft_isspace.c) - checks for a whitespace character
-- `ft_toupper` - convert char to uppercase
-- `ft_tolower` - convert char to lowercase
+- [`ft_islower`](src/ft_islower.c) - checks for an alphabetic lowercase character
+- [`ft_isupper`](src/ft_isupper.c) - checks for an alphabetic uppercase character
+- [`ft_isalpha`](src/ft_isalpha.c) - checks for an alphabetic character
+- [`ft_isdigit`](src/ft_isdigit.c) - checks for a digit (0 through 9)
+- [`ft_isalnum`](src/ft_isalnum.c) - checks for an alphanumeric character
+- [`ft_isascii`](src/ft_isascii.c) - checks whether c fits into the ASCII character set
+- [`ft_isprint`](src/ft_isprint.c) - checks for any printable character
+- [`ft_isspace`](src/ft_isspace.c) - checks for a whitespace character
+- [`ft_toupper`](src/ft_toupper.c) - convert char to uppercase
+- [`ft_tolower`](src/ft_tolower.c) - convert char to lowercase
 
 Functions from `<string.h>`:
-- `ft_strlen` - calculate the length of a string
-- `ft_memset` - fill memory with a constant byte
-- `ft_bzero` - zero a byte string
-- `ft_memcpy` - copy memory area
-- `ft_memmove` - copy memory area with overlap handling
-- `ft_strlcpy` - size-bounded string copying
-- `ft_strlcat` - size-bounded string concatenation
-- `ft_strchr` - locate character in string
-- `ft_strrchr` - locate character in string from the end
-- `ft_strncmp` - compare two strings
-- `ft_memchr` - scan memory for a character
-- `ft_memcmp` - compare memory areas
-- `ft_strnstr` - locate a substring in a string
-- `ft_atoi` - convert a string to an integer
+- [`ft_strlen`](src/ft_strlen.c) - calculate the length of a string
+- [`ft_memset`](src/ft_memset.c) - fill memory with a constant byte
+- [`ft_bzero`](src/ft_bzero.c) - zero a byte string
+- [`ft_memcpy`](src/ft_memcpy.c) - copy memory area
+- [`ft_memmove`](src/ft_memmove.c) - copy memory area with overlap handling
+- [`ft_strlcpy`](src/ft_strlcpy.c) - size-bounded string copying
+- [`ft_strlcat`](src/ft_strlcat.c) - size-bounded string concatenation
+- [`ft_strchr`](src/ft_strchr.c) - locate character in string
+- [`ft_strrchr`](src/ft_strrchr.c) - locate character in string from the end
+- [`ft_strncmp`](src/ft_strncmp.c) - compare two strings
+- [`ft_memchr`](src/ft_memchr.c) - scan memory for a character
+- [`ft_memcmp`](src/ft_memcmp.c) - compare memory areas
+- [`ft_strnstr`](src/ft_strnstr.c) - locate a substring in a string
+- [`ft_atoi`](src/ft_atoi.c) - convert a string to an integer
 
 Functions from `<stdlib.h>`:
-- `ft_calloc` - allocate and zero-initialize array
-- `ft_strdup` - create a duplicate of a string
+- [`ft_calloc`](src/ft_calloc.c) - allocate and zero-initialize array
+- [`ft_strdup`](src/ft_strdup.c) - create a duplicate of a string
 
 ### Part 2 - Additional Functions
-- `ft_substr` - extract substring from string
-- `ft_strjoin` - concatenate two strings
-- `ft_strtrim` - trim beginning and end of string
-- `ft_split` - split string into array of strings
-- `ft_itoa` - convert integer to string
-- `ft_uitoa_base` - convert unsigned int to string on a certain base
-- `ft_ultoa_base` - convert unsigned lng to string on a certain base
-- `ft_strmapi` - create new string from modifying string with function
-- `ft_striteri` - modify string with function
-- `ft_putchar_fd` - output a char to a file descriptor
-- `ft_putstr_fd` - output a string to a file descriptor
-- `ft_putendl_fd` - output a string to a file descriptor, with newline
-- `ft_putnbr_fd` - output a number to a file descriptor
+- [`ft_substr`](src/ft_substr.c) - extract substring from string
+- [`ft_strjoin`](src/ft_strjoin.c) - concatenate two strings
+- [`ft_strtrim`](src/ft_strtrim.c) - trim beginning and end of string
+- [`ft_split`](src/ft_split.c) - split string into array of strings
+- [`ft_itoa`](src/ft_itoa.c) - convert integer to string
+- [`ft_uitoa_base`](src/ft_uitoa_base.c) - convert unsigned int to string on a certain base
+- [`ft_ultoa_base`](src/ft_ultoa_base.c) - convert unsigned lng to string on a certain base
+- [`ft_strmapi`](src/ft_strmapi.c) - create new string from modifying string with function
+- [`ft_striteri`](src/ft_striteri.c) - modify string with function
+- [`ft_putchar_fd`](src/ft_putchar_fd.c) - output a char to a file descriptor
+- [`ft_putstr_fd`](src/ft_putstr_fd.c) - output a string to a file descriptor
+- [`ft_putendl_fd`](src/ft_putendl_fd.c) - output a string to a file descriptor, with newline
+- [`ft_putnbr_fd`](src/ft_putnbr_fd.c) - output a number to a file descriptor
 - [`ft_numlen`](ft_numlen.c) - calculate the number of digits of an unsigned long on a certain base
 
 ### Bonus Part
 Linked List Functions:
-- `ft_lstnew` - create new list element
-- `ft_lstadd_front` - add element to beginning of list
-- `ft_lstsize` - count elements in a list
-- `ft_lstlast` - find last element in list
-- `ft_lstadd_back` - add element to end of list
-- `ft_lstdelone` - delete element from list
-- `ft_lstclear` - delete sequence of elements of list
-- `ft_lstiter` - apply function to content of all list's elements
-- `ft_lstmap` - apply function to content of all list's elements into new list
+- [`ft_lstnew`](src/ft_lstnew.c) - create new list element
+- [`ft_lstadd_front`](src/ft_lstadd_front.c) - add element to beginning of list
+- [`ft_lstsize`](src/ft_lstsize.c) - count elements in a list
+- [`ft_lstlast`](src/ft_lstlast.c) - find last element in list
+- [`ft_lstadd_back`](src/ft_lstadd_back.c) - add element to end of list
+- [`ft_lstdelone`](src/ft_lstdelone.c) - delete element from list
+- [`ft_lstclear`](src/ft_lstclear.c) - delete sequence of elements of list
+- [`ft_lstiter`](src/ft_lstiter.c) - apply function to content of all list's elements
+- [`ft_lstmap`](src/ft_lstmap.c) - apply function to content of all list's elements into new list
 
 
 ### Ft_printf
