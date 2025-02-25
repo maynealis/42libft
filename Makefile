@@ -84,7 +84,7 @@ GNL_SRCS	=	get_next_line.c \
 				get_next_line_utils.c
 
 GNL_MULT_FILES_SRCS	=	get_next_line_bonus.c \
-						get_next_line_bonus.c
+						get_next_line_utils_bonus.c
 
 # Objects
 LIBFT_OBJS	=	$(addprefix $(OBJ_DIR)/, $(LIBFT_SRCS:.c=.o))
