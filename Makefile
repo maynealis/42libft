@@ -6,7 +6,7 @@
 #    By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 16:18:25 by cmayne-p          #+#    #+#              #
-#    Updated: 2025/02/20 10:12:35 by cmayne-p         ###   ########.fr        #
+#    Updated: 2025/02/28 13:51:18 by cmayne-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,6 @@ OBJ_DIR		=	obj
 SRC_DIR		=	src
 INC_DIR		=	inc
 GNL_DIR		=	gnl
-PRINTF_DIR	=	printf
-
-# Headers
-INCLUDES	=	$(INC_DIR)/libft.h
 
 # Source files
 LIBFT_SRCS	=	ft_isspace.c \
@@ -98,6 +94,7 @@ GREEN		=	\033[0;32m
 GREEN_BOLD	=	\033[1;32m
 RED			=	\033[0;31m
 YELLOW		=	\033[0;33m
+YELLOW_BOLD	=	\033[1;33m
 BLUE		=	\033[0;34m
 CYAN		=	\033[0;36m
 PURPLE		=	\033[0;35m
@@ -105,8 +102,10 @@ RESET		=	\033[0m
 
 ifneq ($(filter debug debug_bonus, $(MAKECMDGOALS)),)
 	COLOR	=	$(YELLOW)
+	C_BOLD	=	$(YELLOW_BOLD)
 else
 	COLOR	=	$(GREEN)
+	C_BOLD	=	$(GREEN_BOLD)
 endif
 
 # Targets
@@ -126,7 +125,7 @@ $(OBJ_DIR)/%.o: $(GNL_DIR)/%.c Makefile | $(OBJ_DIR)
 
 $(NAME): $(LIBFT_OBJS) $(GNL_OBJS)
 	@ar rcs $(NAME) $(LIBFT_OBJS) $(GNL_OBJS)
-	@echo "$(GREEN_BOLD)Library built: $(NAME) $(RESET)"
+	@echo "$(C_BOLD)Library built: $(NAME) $(RESET)"
 
 clean:
 	@rm -rf $(OBJ_DIR)
@@ -144,7 +143,7 @@ bonus: .bonus
 .bonus: $(LIST_OBJS)
 	@ar rcs $(NAME) $(LIST_OBJS)
 	@touch $@
-	@echo "$(GREEN_BOLD)Library built: $(NAME) $(RESET)"
+	@echo "$(C_BOLD)Library built: $(NAME) $(RESET)"
 
 debug: CFLAGS += $(DEBUG)
 debug: re
@@ -153,7 +152,7 @@ debug_bonus: CFLAGS += $(DEBUG)
 debug_bonus: fclean bonus
 
 norm:
-	norminette $(LIBFT_SRCS) $(LIST_SRCS) $(INCLUDES)
+	norminette $(SRC_DIR) $(INC_DIR) $(GNL_DIR)
 
 .PHONY: all clean fclean re bonus debug debug_bonus norm
 
