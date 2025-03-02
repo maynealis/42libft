@@ -2,6 +2,15 @@
 
 Libft is a project focused on creating a personal C library, reimplementing standard C library functions and adding additional utility functions. This library will be used in many other 42 projects, making it a fundamental building block of the curriculum.
 
+> [!NOTE]
+> This library is always growing as I use it in other projects.
+
+**Table of contents**
+- [Functions](#-Functions)
+- [Usage](#-Usage)
+- [What I learned](#-What-I-learned)
+- [References](#-References)
+
 ## 🔨 Functions
 
 ### Part 1 - Libc Functions
@@ -51,7 +60,8 @@ Functions from `<stdlib.h>`:
 - [`ft_putstr_fd`](src/ft_putstr_fd.c) - output a string to a file descriptor
 - [`ft_putendl_fd`](src/ft_putendl_fd.c) - output a string to a file descriptor, with newline
 - [`ft_putnbr_fd`](src/ft_putnbr_fd.c) - output a number to a file descriptor
-- [`ft_numlen`](ft_numlen.c) - calculate the number of digits of an unsigned long on a certain base
+- [`ft_numlen`](src/ft_numlen.c) - calculate the number of digits of an unsigned long on a certain base
+- [`ft_exp`](src/ft_exp.c) - calculate the result of a base raised to the power of an exponent
 
 ### Bonus Part
 Linked List Functions:
@@ -66,13 +76,9 @@ Linked List Functions:
 - [`ft_lstmap`](src/ft_lstmap.c) - apply function to content of all list's elements into new list
 
 
-### Ft_printf
-This function is done in another project and included in my custom c library.
-- `ft_printf` - 
-
 ### Get_next_line
 This function is done in another project and included in my custom c library.
-- `get_next_line` - 
+- [`get_next_line`](https://github.com/maynealis/42get_next_line) - read text from a file descriptor line by line
 
 ## 🛠️ Usage
 
@@ -106,7 +112,7 @@ make bonus
 gcc your_file.c -L. -lft
 ```
 
-## 🎯 Key Learning Outcomes
+## 🎯 What I learned
 
 1. **Memory Management**
    - Understanding manual memory allocation
@@ -134,12 +140,6 @@ gcc your_file.c -L. -lft
    - Dependency management
 
 
-## 📈 Project Status
-
-✅ Completed
-⭐ Final Score: 125/100
-
-
 ## 🙋‍♂️ Author
 
 Alis Mayne
@@ -147,7 +147,7 @@ Alis Mayne
 Project done as part of the 42 cursus.
 
 
-## References
+## 🔗 References
 
 * [Memmove](https://marmota.medium.com/c-language-making-memmove-def8792bb8d5)
 * [Static library](https://makori-mildred.medium.com/how-to-create-static-library-in-c-and-how-to-use-it-b8b3e1fde999)
