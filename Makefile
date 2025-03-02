@@ -6,7 +6,7 @@
 #    By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 16:18:25 by cmayne-p          #+#    #+#              #
-#    Updated: 2025/02/28 13:51:18 by cmayne-p         ###   ########.fr        #
+#    Updated: 2025/03/02 12:59:09 by cmayne-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,8 @@ LIBFT_SRCS	=	ft_isspace.c \
 				ft_putnbr_fd.c \
 				ft_numlen.c \
 				ft_uitoa_base.c \
-				ft_ultoa_base.c
+				ft_ultoa_base.c \
+				ft_exp.c
 
 LIST_SRCS	=	ft_lstnew_bonus.c \
 				ft_lstadd_front_bonus.c \

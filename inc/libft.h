@@ -6,7 +6,7 @@
 /*   By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 16:36:55 by cmayne-p          #+#    #+#             */
-/*   Updated: 2025/02/20 08:40:22 by cmayne-p         ###   ########.fr       */
+/*   Updated: 2025/03/02 12:58:53 by cmayne-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_exp(int base, int exp);
 typedef struct s_list
 {
 	void			*content;
