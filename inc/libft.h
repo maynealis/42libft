@@ -60,6 +60,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_exp(int base, int exp);
+void	ft_free_arr2d(char **arr);
 typedef struct s_list
 {
 	void			*content;

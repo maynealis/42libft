@@ -65,7 +65,8 @@ LIBFT_SRCS	=	ft_isspace.c \
 				ft_numlen.c \
 				ft_uitoa_base.c \
 				ft_ultoa_base.c \
-				ft_exp.c
+				ft_exp.c \
+				ft_free_arr2d.c
 
 LIST_SRCS	=	ft_lstnew_bonus.c \
 				ft_lstadd_front_bonus.c \

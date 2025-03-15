@@ -62,6 +62,7 @@ Functions from `<stdlib.h>`:
 - [`ft_putnbr_fd`](src/ft_putnbr_fd.c) - output a number to a file descriptor
 - [`ft_numlen`](src/ft_numlen.c) - calculate the number of digits of an unsigned long on a certain base
 - [`ft_exp`](src/ft_exp.c) - calculate the result of a base raised to the power of an exponent
+- [`ft_free_arr2d`](src/ft_free_arr2d.c) - frees a dynamically allocated 2D array of strings
 
 ### Bonus Part
 Linked List Functions:
