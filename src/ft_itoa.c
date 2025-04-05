@@ -6,18 +6,11 @@
 /*   By: cmayne-p <cmayne-p@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:39:26 by cmayne-p          #+#    #+#             */
-/*   Updated: 2025/01/04 18:08:57 by cmayne-p         ###   ########.fr       */
+/*   Updated: 2025/04/05 17:08:37 by cmayne-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
 
 static int	ft_intlen(int n)
 {
