@@ -1,4 +1,0 @@
-[submodule "gnl"]
-	path = gnl
-	url = git@github.com:maynealis/42get_next_line.git
-	branch = main
